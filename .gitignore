@@ -1,0 +1,47 @@
+# ---------------------------------------------------------------- build output
+build/
+Debug/
+Release/
+
+# Object / dependency / listing files
+*.o
+*.d
+*.lst
+*.su
+*.cyclo
+
+# Firmware images and linker output
+*.elf
+*.hex
+*.bin
+*.map
+*.dis
+*.srec
+
+# ---------------------------------------------------------------- debugger / tools
+*.jdebug
+*.jdebug.user
+.cortex-debug.*
+openocd.log
+
+# ---------------------------------------------------------------- editors / IDEs
+# Keep the shared VS Code project config, ignore personal state
+.vscode/*
+!.vscode/c_cpp_properties.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.vs/
+.idea/
+*.swp
+*~
+
+# STM32CubeIDE / Eclipse metadata
+.metadata/
+.settings/
+*.launch
+
+# ---------------------------------------------------------------- OS files
+Thumbs.db
+Desktop.ini
+.DS_Store

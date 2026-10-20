@@ -1,0 +1,30 @@
+{
+    // Requires the "Cortex-Debug" extension (marus25.cortex-debug)
+    // and either OpenOCD or the ST-LINK GDB server (STM32CubeCLT).
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug (OpenOCD + ST-LINK)",
+            "type": "cortex-debug",
+            "request": "launch",
+            "servertype": "openocd",
+            "cwd": "${workspaceFolder}",
+            "executable": "${workspaceFolder}/build/stm32f446re_can.elf",
+            "configFiles": ["interface/stlink.cfg", "target/stm32f4x.cfg"],
+            "device": "STM32F446RE",
+            "runToEntryPoint": "main",
+            "preLaunchTask": "Build"
+        },
+        {
+            "name": "Debug (ST-LINK GDB server)",
+            "type": "cortex-debug",
+            "request": "launch",
+            "servertype": "stlink",
+            "cwd": "${workspaceFolder}",
+            "executable": "${workspaceFolder}/build/stm32f446re_can.elf",
+            "device": "STM32F446RE",
+            "runToEntryPoint": "main",
+            "preLaunchTask": "Build"
+        }
+    ]
+}

@@ -1,0 +1,32 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build",
+            "type": "shell",
+            "command": "make -j8",
+            "group": { "kind": "build", "isDefault": true },
+            "problemMatcher": ["$gcc"]
+        },
+        {
+            "label": "Clean",
+            "type": "shell",
+            "command": "make clean",
+            "problemMatcher": []
+        },
+        {
+            "label": "Flash (STM32CubeProgrammer)",
+            "type": "shell",
+            "command": "make flash",
+            "dependsOn": "Build",
+            "problemMatcher": []
+        },
+        {
+            "label": "Flash (OpenOCD)",
+            "type": "shell",
+            "command": "make flash-openocd",
+            "dependsOn": "Build",
+            "problemMatcher": []
+        }
+    ]
+}

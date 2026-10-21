@@ -4,6 +4,9 @@
             "name": "STM32F446RE",
             "includePath": [
                 "${workspaceFolder}/Core/Inc",
+                "${workspaceFolder}/Libraries/CAN/Inc",
+                "${workspaceFolder}/Libraries/GPIO/Inc",
+                "${workspaceFolder}/Libraries/PWM/Inc",
                 "${workspaceFolder}/Drivers/CMSIS/Include",
                 "${workspaceFolder}/Drivers/CMSIS/Device/ST/STM32F4xx/Include"
             ],

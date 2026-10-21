@@ -22,12 +22,15 @@ OBJDUMP := $(PREFIX)objdump
 SIZE    := $(PREFIX)size
 
 # ---------------------------------------------------------------- sources
-C_SOURCES := $(wildcard Core/Src/*.c)
+# Libraries/<NAME>/Src/*.c and Libraries/<NAME>/Inc are picked up automatically
+LIB_DIRS  := $(sort $(dir $(wildcard Libraries/*/)))
+C_SOURCES := $(wildcard Core/Src/*.c) $(wildcard Libraries/*/Src/*.c)
 ASM_SOURCES := Startup/startup_stm32f446xx.s
 LDSCRIPT  := STM32F446RETx_FLASH.ld
 
 C_INCLUDES := \
   -ICore/Inc \
+  $(addprefix -I,$(addsuffix Inc,$(LIB_DIRS))) \
   -IDrivers/CMSIS/Include \
   -IDrivers/CMSIS/Device/ST/STM32F4xx/Include
 
